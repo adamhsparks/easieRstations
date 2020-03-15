@@ -5,9 +5,9 @@ Version: 0.0.0.9000
 Authors@R: person("Adam H.", "Sparks", role = c("aut", "cre"),
     email = "adamhsparks@gmail.com",
     comment = c(ORCID = "0000-0002-0061-8359"))
-Description: Provides wEAther ShinY (EASY) selection of 'GSOD' weather stations
-    through a 'leaflet' driven 'shiny' interface to download selected weather
-    stations' data using 'GSODR'.
+Description: Provides wEAther station shinY (EASY) based selection of 'GSOD'
+    weather stations through a 'leaflet' driven 'shiny' interface to download
+    selected weather stations' data using 'GSODR'.
 Depends:
     R (>= 3.2.0)
 Imports:
