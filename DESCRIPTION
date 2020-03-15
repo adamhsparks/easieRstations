@@ -1,0 +1,33 @@
+Package: easyGSODR
+Type: Package
+Title: Easy GSOD weather station selection using an interactive map
+Version: 0.0.0.9000
+Authors@R: person("Adam H.", "Sparks", role = c("aut", "cre"),
+    email = "adamhsparks@gmail.com",
+    comment = c(ORCID = "0000-0002-0061-8359"))
+Description: Provides wEAther ShinY (EASY) selection of 'GSOD' weather stations
+    through a 'leaflet' driven 'shiny' interface to download selected weather
+    stations' data using 'GSODR'.
+Depends:
+    R (>= 3.2.0)
+Imports:
+  DT,
+  GSODR (>= 2.0),
+  htmltools,
+  leaflet,
+  leaflet.extras,
+  magrittr,
+  sf,
+  shiny,
+  shinydashboard
+Suggests: 
+    testthat
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://adamhsparks.github.io/easyGSODR/
+BugReports: https://github.com/adamhsparks/easyGSODR/issues
+NeedsCompilation: no
+ByteCompile: TRUE
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0
