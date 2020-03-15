@@ -7,3 +7,4 @@ $run_dev.*
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^\.travis\.yml$
