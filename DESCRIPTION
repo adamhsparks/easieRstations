@@ -11,6 +11,7 @@ Description: Provides wEAther ShinY (EASY) selection of 'GSOD' weather stations
 Depends:
     R (>= 3.2.0)
 Imports:
+  config,
   DT,
   golem,
   GSODR (>= 2.0),
