@@ -8,8 +8,10 @@ app_server <- function(input, output, session) {
   # List the first level callModules here
 
   shiny::shinyServer(function(input, output, session) {
-    #Geodata
-    load(system.file("extdata", "isd_history.rda", package = "GSODR")) #nocov
+    #nocov start
+    isd_history <- providers <-  NULL
+    load(system.file("extdata", "isd_history.rda", package = "GSODR"))
+    #nocov end
 
     stations <-
       sf::st_as_sf(x = isd_history,
@@ -25,12 +27,12 @@ app_server <- function(input, output, session) {
     output$mymap <- leaflet::renderLeaflet({
       leaflet::leaflet() %>%
         leaflet::addProviderTiles(providers$CartoDB.Positron) %>%
-        addDrawToolbar(
+        leaflet.extras::addDrawToolbar(
           polylineOptions = F,
-          circleOptions = F,
+          circleOptions = T,
           markerOptions = F,
           circleMarkerOptions = F,
-          polygonOptions = F
+          polygonOptions = T
         )
     })
 
@@ -39,7 +41,7 @@ app_server <- function(input, output, session) {
       coords <- unlist(feat$geometry$coordinates)
       coords <- matrix(coords, ncol = 2, byrow = T)
       poly <-
-        sf::st_sf(st_sfc(st_polygon(list(coords))), crs = 4326)
+        sf::st_sf(sf::st_sfc(sf::st_polygon(list(coords))), crs = 4326)
     })
 
     #Substations <-
@@ -71,43 +73,43 @@ app_server <- function(input, output, session) {
         radius = 5,
         fillColor = "#bb0000",
         fillOpacity = 0.5,
-        clusterOptions = markerClusterOptions()
+        clusterOptions = leaflet::markerClusterOptions()
       )
 
 
     # Handle Selector Based Events --------------------------------------------
-    TS <- shiny::eventReactive(input$data, {
-      ObtainTimeSeries(
-        StationID = input$StatID,
-        Start = input$Start,
-        End = input$End
-      )
-    })
-
-    shiny::observeEvent(input$data, {
-      if (is.data.frame(TS())) {
-        output$WeatherOUT <- DT::renderDataTable({
-          datatable(TS(), options = list(scrollX = T))
-        })
-      }
-    })
-
-    output$down.csv <- shiny::downloadHandler(
-      filename = function() {
-        paste0(
-          "Weather_Station",
-          input$StatID,
-          "_Start",
-          input$Start,
-          "_End",
-          input$End,
-          ".csv"
-        )
-      },
-
-      content = function(file) {
-        write_csv(TS(), file)
-      }
-    )
+    # TS <- shiny::eventReactive(input$data, {
+    #   ObtainTimeSeries(
+    #     StationID = input$StatID,
+    #     Start = input$Start,
+    #     End = input$End
+    #   )
+    # })
+    #
+    # shiny::observeEvent(input$data, {
+    #   if (is.data.frame(TS())) {
+    #     output$WeatherOUT <- DT::renderDataTable({
+    #       DT::datatable(TS(), options = list(scrollX = T))
+    #     })
+    #   }
+    # })
+    #
+    # output$down.csv <- shiny::downloadHandler(
+    #   filename = function() {
+    #     paste0(
+    #       "Weather_Station",
+    #       input$StatID,
+    #       "_Start",
+    #       input$Start,
+    #       "_End",
+    #       input$End,
+    #       ".csv"
+    #     )
+    #   },
+    #
+    #   content = function(file) {
+    #     write_csv(TS(), file)
+    #   }
+    #)
   })
 }

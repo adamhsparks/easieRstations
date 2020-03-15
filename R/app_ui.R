@@ -6,6 +6,8 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
+
+  header <- providers <- sidebar <- NULL #nocov
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
