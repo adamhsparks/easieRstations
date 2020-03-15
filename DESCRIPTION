@@ -21,6 +21,7 @@ Imports:
   magrittr,
   sf,
   shiny,
+  shinybusy,
   shinydashboard
 Suggests: 
     testthat
