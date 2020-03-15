@@ -30,5 +30,4 @@ URL: https://adamhsparks.github.io/easyGSODR/
 BugReports: https://github.com/adamhsparks/easyGSODR/issues
 NeedsCompilation: no
 ByteCompile: TRUE
-VignetteBuilder: knitr
 RoxygenNote: 7.1.0
