@@ -12,6 +12,7 @@ Depends:
     R (>= 3.2.0)
 Imports:
   DT,
+  golem,
   GSODR (>= 2.0),
   htmltools,
   leaflet,
