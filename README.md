@@ -6,7 +6,7 @@
 ![pkgdown](https://github.com/adamhsparks/easieRstations/workflows/pkgdown/badge.svg)
 <!-- badges: end -->
 
-The goal of easieRstations is to provide wEAther ShinY (EASY) selection of GSOD weather station locations through a [leaflet](https://cran.r-project.org/package=leaflet) driven [shiny](https://cran.r-project.org/package=shiny) interface to download selected weather stations' data using [GSODR](https://cran.r-project.org/package=GSODR) or [bomrang](https://cran.r-project.org/package=bomrang). easieRstations is based on the excellent work of Dr. Fabio Veronesi, [Shiny App to access NOAA data](https://r-video-tutorial.blogspot.com/2019/02/shiny-app-to-access-noaa-data.html).
+The goal of easieRstations is to provide wEAther ShinY (EASY) selection of GSOD or Australian BOM weather station locations through a [leaflet](https://cran.r-project.org/package=leaflet) driven [shiny](https://cran.r-project.org/package=shiny) interface to download selected weather stations' data using [GSODR](https://cran.r-project.org/package=GSODR) or [bomrang](https://cran.r-project.org/package=bomrang). easieRstations is based on the excellent work of Dr. Fabio Veronesi, [Shiny App to access NOAA data](https://r-video-tutorial.blogspot.com/2019/02/shiny-app-to-access-noaa-data.html).
 
 **Please note, this package is currently not yet fully functional.**
 
