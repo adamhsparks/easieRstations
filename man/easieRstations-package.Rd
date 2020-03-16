@@ -7,7 +7,7 @@
 \title{easieRstations: Easy selection of weather stations using a shiny app and leaflet}
 \description{
 Provides a wEAther Station pIckER (EASIER) for 'NCEI' Global
-    Summary of the Day, 'GSOD', and Australian Beureau of Meteorology, 'BOM',
+    Summary of the Day, 'GSOD', and Australian Bureau of Meteorology, 'BOM',
     weather stations through a 'leaflet' driven 'shiny' interface to automate
     the download of selected weather stations' data using 'GSODR' or 'bomrang'.
 }

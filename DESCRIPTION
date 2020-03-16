@@ -6,7 +6,7 @@ Authors@R: person("Adam H.", "Sparks", role = c("aut", "cre"),
     email = "adamhsparks@gmail.com",
     comment = c(ORCID = "0000-0002-0061-8359"))
 Description: Provides a wEAther Station pIckER (EASIER) for 'NCEI' Global
-    Summary of the Day, 'GSOD', and Australian Beureau of Meteorology, 'BOM',
+    Summary of the Day, 'GSOD', and Australian Bureau of Meteorology, 'BOM',
     weather stations through a 'leaflet' driven 'shiny' interface to automate
     the download of selected weather stations' data using 'GSODR' or 'bomrang'.
 Depends:
