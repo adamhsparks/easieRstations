@@ -7,16 +7,37 @@
 app_server <- function(input, output, session) {
   # List the first level callModules here
 
-  shiny::shinyServer(function(input, output, session) {
-    #nocov start
-    isd_history <- providers <-  NULL
-    load(system.file("extdata", "isd_history.rda", package = "GSODR"))
-    #nocov end
+  shiny::shinyServer(
+    function(input, output, session) {
+      #nocov start
+      isd_history <-
+        providers <-
+        JSONurl_site_list.rda <-
+        current_stations_site_list.rda <-  NULL
+      load(system.file("extdata", "isd_history.rda",
+                       package = "GSODR"))
 
-    stations <-
-      sf::st_as_sf(x = isd_history,
-                   coords = c("LON", "LAT"),
-                   crs = 4326)
+      load(system.file("extdata", "JSONurl_site_list.rda",
+                       package = "bomrang"))
+
+      load(system.file("extdata", "current_stations_site_list.rda",
+                       package = "bomrang"))
+      #nocov end
+
+      GSODR_sites <-
+        sf::st_as_sf(x = isd_history,
+                     coords = c("LON", "LAT"),
+                     crs = 4326)
+
+      bom_historical_current_sites <-
+        sf::st_as_sf(x = JSONurl_site_list,
+                     coords = c("lon", "lat"),
+                     crs = 4326)
+
+      bom_ag_bulletin_sites <-
+        sf::st_as_sf(x = stations_site_list,
+                     coords = c("lon", "lat"),
+                     crs = 4326)
 
     # Start Shiny Server ---------------------------------------------------------
     # show markers only on zoom and extract based on bounding box
