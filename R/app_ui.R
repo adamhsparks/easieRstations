@@ -15,8 +15,8 @@ app_ui <- function(request) {
     shinydashboard::dashboardHeader(
       # dashboard header -------------------------------------------------------
       title = paste(
-        "easyGSODR v",
-        utils::packageVersion("easyGSODR"),
+        "easieRstations v",
+        utils::packageVersion("easieRstations"),
         sep = "",
         collapse = ""
       ),
@@ -102,7 +102,7 @@ golem_add_external_resources <- function() {
 
   tags$head(favicon(),
             bundle_resources(path = app_sys('app/www'),
-                             app_title = 'easyGSODR')
+                             app_title = 'easieRstations')
             # Add here other external resources
             # for example, you can add shinyalert::useShinyalert()
             )

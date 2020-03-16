@@ -1,16 +1,18 @@
-Package: easyGSODR
+Package: easieRstations
 Type: Package
-Title: Easy GSOD weather station selection using an interactive map
+Title: Easy selection of weather stations using a shiny app and leaflet
 Version: 0.0.0.9000
 Authors@R: person("Adam H.", "Sparks", role = c("aut", "cre"),
     email = "adamhsparks@gmail.com",
     comment = c(ORCID = "0000-0002-0061-8359"))
-Description: Provides wEAther station shinY (EASY) based selection of 'GSOD'
-    weather stations through a 'leaflet' driven 'shiny' interface to download
-    selected weather stations' data using 'GSODR'.
+Description: Provides a wEAther Station pIckER (EASIER) for 'NCEI' Global
+    Summary of the Day, 'GSOD', and Australian Beureau of Meteorology, 'BOM',
+    weather stations through a 'leaflet' driven 'shiny' interface to automate
+    the download of selected weather stations' data using 'GSODR' or 'bomrang'.
 Depends:
     R (>= 3.2.0)
 Imports:
+  bomrang,
   config,
   DT,
   golem,
@@ -28,8 +30,8 @@ Suggests:
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://adamhsparks.github.io/easyGSODR/
-BugReports: https://github.com/adamhsparks/easyGSODR/issues
+URL: https://adamhsparks.github.io/easieRstations/
+BugReports: https://github.com/adamhsparks/easieRstations/issues
 NeedsCompilation: no
 ByteCompile: TRUE
 RoxygenNote: 7.1.0

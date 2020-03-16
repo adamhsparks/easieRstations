@@ -1,12 +1,12 @@
 # Building a Prod-Ready, Robust Shiny Application.
-# 
-# README: each step of the dev files is optional, and you don't have to 
-# fill every dev scripts before getting started. 
-# 01_start.R should be filled at start. 
+#
+# README: each step of the dev files is optional, and you don't have to
+# fill every dev scripts before getting started.
+# 01_start.R should be filled at start.
 # 02_dev.R should be used to keep track of your development during the project.
 # 03_deploy.R should be used once you need to deploy your app.
-# 
-# 
+#
+#
 ########################################
 #### CURRENT FILE: ON START SCRIPT #####
 ########################################
@@ -14,14 +14,14 @@
 ## Fill the DESCRIPTION ----
 ## Add meta data about your application
 golem::fill_desc(
-  pkg_name = "easyGSODR", # The Name of the package containing the App 
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App 
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App 
+  pkg_name = "easieRstations", # The Name of the package containing the App
+  pkg_title = "PKG_TITLE", # The Title of the package containing the App
+  pkg_description = "PKG_DESC.", # The Description of the package containing the App
   author_first_name = "AUTHOR_FIRST", # Your First Name
   author_last_name = "AUTHOR_LAST", # Your Last Name
   author_email = "AUTHOR@MAIL.COM", # Your Email
-  repo_url = NULL # The URL of the GitHub Repo (optional) 
-)     
+  repo_url = NULL # The URL of the GitHub Repo (optional)
+)
 
 ## Set {golem} options ----
 golem::set_golem_options()
@@ -47,7 +47,7 @@ golem::use_recommended_deps()
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
 golem::remove_favicon()
-golem::use_favicon() # path = "path/to/ico". Can be an online file. 
+golem::use_favicon() # path = "path/to/ico". Can be an online file.
 
 ## Add helper functions ----
 golem::use_utils_ui()
